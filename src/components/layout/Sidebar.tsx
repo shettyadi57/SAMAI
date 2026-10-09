@@ -14,6 +14,7 @@ import {
   Layers,
   Radio,
   ExternalLink,
+  BrainCircuit,
 } from 'lucide-react';
 
 interface NavItem {
@@ -58,6 +59,12 @@ export const Sidebar: React.FC = () => {
       icon: BarChart3,
     },
     {
+      to: '/authority/predictor',
+      label: 'AI Risk Predictor',
+      icon: BrainCircuit,
+      badge: 'ML Engine',
+    },
+    {
       to: '/profile',
       label: 'Officer Profile',
       icon: User,
@@ -75,6 +82,12 @@ export const Sidebar: React.FC = () => {
       label: 'Report Road Hazard',
       icon: PlusCircle,
       highlight: true,
+    },
+    {
+      to: '/predictor',
+      label: 'AI Risk Predictor',
+      icon: BrainCircuit,
+      badge: 'ML Simulator',
     },
     {
       to: '/profile',

@@ -14,6 +14,7 @@ import { AuthorityDashboard } from './pages/AuthorityDashboard';
 import { AuthorityReportsPage } from './pages/AuthorityReportsPage';
 import { AuthorityHotspotsPage } from './pages/AuthorityHotspotsPage';
 import { AuthorityAnalyticsPage } from './pages/AuthorityAnalyticsPage';
+import { RiskPredictorPage } from './pages/RiskPredictorPage';
 import { ProfilePage } from './pages/ProfilePage';
 
 // Route protection for Authority
@@ -134,6 +135,22 @@ export const App: React.FC = () => {
                   <AuthorityRoute>
                     <AuthorityAnalyticsPage />
                   </AuthorityRoute>
+                }
+              />
+              <Route
+                path="/authority/predictor"
+                element={
+                  <AuthorityRoute>
+                    <RiskPredictorPage />
+                  </AuthorityRoute>
+                }
+              />
+              <Route
+                path="/predictor"
+                element={
+                  <ProtectedRoute>
+                    <RiskPredictorPage />
+                  </ProtectedRoute>
                 }
               />
 

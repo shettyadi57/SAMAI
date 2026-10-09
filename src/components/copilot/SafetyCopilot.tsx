@@ -51,6 +51,7 @@ export const SafetyCopilot: React.FC = () => {
       ? [
           'Show top 5 priority locations',
           "Summarize today's unresolved reports",
+          'Forecast crash risk under rain/fog',
           'Why is the #1 corridor high risk?',
           'Explain weekly accident trend',
           'What should an officer inspect first?',
@@ -102,6 +103,13 @@ export const SafetyCopilot: React.FC = () => {
         `• **Citizen Reports:** ${topCorridor.verifiedHazardsCount} independently verified hazard reports (e.g., deep asphalt depressions and failed street lighting).\n` +
         `• **Telemetry:** High VRU (vulnerable road user) density percentile (**${topCorridor.percentiles.vruDensity}%**) and excessive braking events.\n\n` +
         `**Recommended Action:** *${topCorridor.recommendedAction}*`;
+    }
+
+    if (q.includes('predict') || q.includes('forecast') || q.includes('weather') || q.includes('rain') || q.includes('fog')) {
+      return `**AI Crash Risk Predictor Intelligence:**\n\n` +
+        `• **Adverse Weather Impact:** Dense fog increases fatal collision likelihood across high-speed radials. Heavy rain degrades tire braking traction by up to 35%.\n` +
+        `• **In-Browser ML Simulation:** Our Softmax Logistic Regression engine forecasts P(Slight/Severe/Fatal) and runs feature ablation explaining exact factor contributions.\n` +
+        `• **Live Corridors Map:** Open the **"AI Risk Predictor"** console from the sidebar (/authority/predictor) to simulate custom speeds, lighting, and weather conditions with live Open-Meteo telemetry sync.`;
     }
 
     if (q.includes('trend') || q.includes('weekly')) {
